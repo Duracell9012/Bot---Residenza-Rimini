@@ -235,3 +235,16 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(process.env.TOKEN);
+
+// ——— SERVER EXPRESS PER RENDER/UPTIMEROBOT ———
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('✅ Bot Residenza Rimini attivo!');
+});
+
+app.listen(port, () => {
+  console.log(`🌐 Web server Express avviato su porta ${port}`);
+});
